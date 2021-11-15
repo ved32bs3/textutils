@@ -11,8 +11,8 @@ export default function Navbar(props) {
   const aboutClick = () => {
 	document.title = 'TextUtils - A text utility | About';
   }
-  const contactClick = () => {
-	document.title = 'TextUtils - A text utility | Contact Us';
+  const settingsClick = () => {
+	document.title = 'TextUtils - A text utility | Settings';
   }
 
   return (
@@ -31,7 +31,7 @@ export default function Navbar(props) {
 				<Link className="nav-link" to="/about" onClick={aboutClick}>About</Link>
     	      </li>
     	      <li className="nav-item">
-				<Link className="nav-link" to="/contact-us" onClick={contactClick}>Contact Us</Link>
+				<Link className="nav-link" to="/contact-us" onClick={settingsClick}>Settings</Link>
     	      </li>
     	    </ul>
 			<div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
