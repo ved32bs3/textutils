@@ -38,7 +38,7 @@ function App() {
             <ContactUs />
           </Route>
           <Route exact path="/">
-            <Textbox mode={Mode} heading="Enter your text to analyze it below!!"/>
+            <Textbox mode={Mode} heading="Enter your text to analyze it below!!"placeholder="Enter some text here"/>
           </Route>
         </Switch>
       </Router>

@@ -48,17 +48,17 @@ export default function Textbox(props) {
             <label htmlFor="textArea" className="form-label">Edit your text to Uppercase, Lowercase and more with the buttons given below the textarea.</label>
             <textarea className="form-control border-2" id="textArea" rows="8" value={text} placeholder={props.placeholder} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'grey':'whitesmoke', color: props.mode==='dark'?'white':'black'}}></textarea>
           </div>
-          <button className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to Uppercase</button>
-          <button className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>Convert to Lowercase</button>
-          <button className="btn btn-primary mx-2 my-2" onClick={handleClearClick}>Clear text</button>
-          <button className="btn btn-primary mx-2 my-2" onClick={handleCopyClick}>{CopyBtn}</button>
-          <button className="btn btn-primary mx-2 my-2" onClick={handleSpaClick}>Remove extra spaces</button> 
+          <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to Uppercase</button>
+          <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>Convert to Lowercase</button>
+          <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleClearClick}>Clear text</button>
+          <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleCopyClick}>{CopyBtn}</button>
+          <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleSpaClick}>Remove extra spaces</button> 
         </div>  
       </div>
       <div className="container">
         <h2>Your typing summary:</h2>
-        <p>{text.split(' ').filter((element) => {return element, element !== 0;}).length} words and {text.length} characters,
-        <span> {0.008 * text.split(' ').length - 0.008} Minutes to read. (Time taken to read is on average and is estimated.)</span></p>
+        <p>{text.split(/\s/).filter((element) => {return element.length !== 0;}).length} words and {text.length} characters,
+        <span> {0.008 * text.split(' ').filter((element) => {return element.length !== 0;}).length} Minutes to read. (Time taken to read is on average and is estimated.)</span></p>
         <h3>Preview:</h3>
         <p>{text===''?'Enter some text above to preview it here.':text}</p>
       </div>
