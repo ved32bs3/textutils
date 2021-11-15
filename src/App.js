@@ -2,9 +2,9 @@ import './App.css';
 import Navbar from './Components/Navbar';
 import Textbox from './Components/Textbox';
 import About from './Components/About';
-import ContactUs from './Components/ContactUs';
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Settings from './Components/Settings';
 
 function App() {
   const [Mode, setMode] = useState('light');
@@ -35,7 +35,7 @@ function App() {
             </div>
           </Route>
           <Route exact path="/contact-us">
-            <ContactUs />
+            <Settings />
           </Route>
           <Route exact path="/">
             <Textbox mode={Mode} heading="Enter your text to analyze it below!!"placeholder="Enter some text here"/>
