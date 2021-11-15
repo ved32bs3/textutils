@@ -57,7 +57,7 @@ export default function Textbox(props) {
       </div>
       <div className="container">
         <h2>Your typing summary:</h2>
-        <p>{text.split(' ').length - 1} words and {text.length} characters,
+        <p>{text.split(' ').filter((element) => {return element, element !== 0;}).length} words and {text.length} characters,
         <span> {0.008 * text.split(' ').length - 0.008} Minutes to read. (Time taken to read is on average and is estimated.)</span></p>
         <h3>Preview:</h3>
         <p>{text===''?'Enter some text above to preview it here.':text}</p>
